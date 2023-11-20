@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webserver:
+    build: ./data/nginx/conf
+    restart: always
+    ports:
+      - 80:80
+    container_name: webserver
+    volumes:
+      - ./data/nginx/conf/:/etc/nginx/
+      - ./data/nginx/www/:/var/www/
